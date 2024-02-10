@@ -1,0 +1,29 @@
+body {
+  color: black;
+}
+
+.character:hover {
+    background-color: lightgreen;
+}
+
+.characterSelect:hover {
+    background-color: lightgreen;
+}
+
+#newCharacterButton:hover {
+    background-color: lightgreen;
+}
+
+#deleteButton {
+    border-width: 5px;
+    background-color: red;
+}
+
+#selectButton {
+    border-width: 5px;
+    background-color: green;
+}
+
+.found {
+    background-color: lightgreen;
+}
