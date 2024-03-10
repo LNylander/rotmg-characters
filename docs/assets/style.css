@@ -24,6 +24,20 @@ body {
     background-color: green;
 }
 
+#characterDeletionWarning {
+    color: red;
+}
+
+#yesButton {
+    border-width: 5px;
+    background-color: red;
+}
+
+#noButton {
+    border-width: 5px;
+    background-color: green;
+}
+
 .found {
     background-color: lightgreen;
 }
