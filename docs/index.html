@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+  <title>ppe tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="startUp()">
+  <div>
+      <h1 id="title">Characters</h1>
+  </div>
+
+  <div id="characters">
+  </div>
+
+  <div id="characterInfo">
+    <p id="characterName"></p>
+    <p id="percentCompletion"></p>
+  </div>
+
+  <div id="items">
+      <div id="checklistDiv">
+          <input type="checkbox" id="showClassOnly" name="showClassOnly" onclick="toggleCheckbox(currentCharacter)"/>
+          <label for="showClassOnly">Show Class-specific Items Only</label>
+      </div>
+      <div id="weapons">
+        <h1>Weapons</h1>
+      </div>
+      <div id="armor">
+        <h1>Armor</h1>
+      </div>
+      <div id="abilities">
+        <h1>Abilities</h1>
+      </div>
+      <div id="accessories">
+        <h1>Accessories</h1>
+      </div>
+  </div>
+
+  <div id="classSelection">
+      <h1>Choose your class:</h1>
+      <img src="assets/rogue.png" alt="Rogue" width="50" height="50" title="rogue" class="characterSelect" id="rogue">
+      <img src="assets/archer.png" alt="Archer" title="archer" width="50" height="50" class="characterSelect" id="archer">
+      <img src="assets/wizard.png" alt="Wizard" title="wizard" width="50" height="50" class="characterSelect" id="wizard">
+      <img src="assets/priest.png" alt="Priest" title="priest" width="50" height="50" class="characterSelect" id="priest">
+      <img src="assets/warrior.png" alt="Warrior" title="warrior" width="50" height="50" class="characterSelect" id="warrior">
+      <img src="assets/knight.png" alt="Knight" title="knight" width="50" height="50" class="characterSelect" id="knight">
+      <img src="assets/paladin.png" alt="Paladin" title="paladin" width="50" height="50" class="characterSelect" id="paladin">
+      <img src="assets/assassin.png" alt="Assassin" title="assassin" width="50" class="characterSelect" id="assassin">
+      <img src="assets/necromancer.png" alt="Necromancer" title="necromancer" width="50" class="characterSelect" id="necromancer">
+      <img src="assets/huntress.png" alt="Huntress" title="huntress" width="50" class="characterSelect" id="huntress">
+      <img src="assets/mystic.png" alt="Mystic" title="mystic" width="50" height="50" class="characterSelect" id="mystic">
+      <img src="assets/trickster.png" alt="Trickster" title="trickster" width="50" height="50" class="characterSelect" id="trickster">
+      <img src="assets/sorcerer.png" alt="Sorcerer" title="sorcerer" width="50" height="50" class="characterSelect" id="sorcerer">
+      <img src="assets/ninja.png" alt="Ninja" title="ninja" width="50" height="50" class="characterSelect" id="ninja">
+      <img src="assets/samurai.png" alt="Samurai" title="samurai" width="50" height="50" class="characterSelect" id="samurai">
+      <img src="assets/bard.png" alt="Bard" title="bard" width="50" height="50" class="characterSelect" id="bard">
+      <img src="assets/summoner.png" alt="Summoner" title="summoner" width="50" height="50" class="characterSelect" id="summoner">
+      <img src="assets/kensei.png" alt="Kensei" title="kensei" width="50" height="50" class="characterSelect" id="kensei">
+  </div>
+
+  <div id="characterOptions">
+  </div>
+
+  <script src="ppe.js"></script>
+
+</body>
