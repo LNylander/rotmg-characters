@@ -1,11 +1,13 @@
 // Created by Leighton Nylander on 1/29/2024
-// Last edited: 3/09/2024
+// Last edited: 5/02/2024
 
 /*
 
-TO DO:
+    To Do:
+        - Add a blurb on the main page about what the website is for 
+        - Add percent total of subcategories (e.g. 'Abilities: 5/20 25%)
 
-    - Make a loading screen to hide loading elements?
+        - class-specific toggle is STILL showing non-class items for certain classes (for certain classes, I can't duplicate the bug)
 
 */
 
@@ -294,7 +296,7 @@ function loadAllItems()
     for (let i = 0; i < weaponList.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/" + weaponList[i] + ".png");
+        newItem.setAttribute("src", "assets/items/" + weaponList[i] + ".png");
         newItem.setAttribute("alt", weaponList[i]);
         newItem.setAttribute("title", weaponList[i]);
         newItem.setAttribute("width", "40");
@@ -309,7 +311,7 @@ function loadAllItems()
     for (let i = 0; i < armorList.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/" + armorList[i] + ".png");
+        newItem.setAttribute("src", "assets/items/" + armorList[i] + ".png");
         newItem.setAttribute("alt", armorList[i]);
         newItem.setAttribute("title", armorList[i]);
         newItem.setAttribute("width", "40");
@@ -324,7 +326,7 @@ function loadAllItems()
     for (let i = 0; i < abilityList.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/" + abilityList[i] + ".png");
+        newItem.setAttribute("src", "assets/items/" + abilityList[i] + ".png");
         newItem.setAttribute("alt", abilityList[i]);
         newItem.setAttribute("title", abilityList[i]);
         newItem.setAttribute("width", "40");
@@ -339,7 +341,7 @@ function loadAllItems()
     for (let i = 0; i < accessories.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/" + accessories[i] + ".png");
+        newItem.setAttribute("src", "assets/items/" + accessories[i] + ".png");
         newItem.setAttribute("alt", accessories[i]);
         newItem.setAttribute("title", accessories[i]);
         newItem.setAttribute("width", "40");
@@ -385,7 +387,7 @@ function loadAllItems()
                 document.getElementById(allItems[i]).className = "found";
                 currentCharacter.foundItems.push(allItems[i]);
 
-                if (currentCharacter.classOnlyChecked) {
+                if (currentCharacter.classItemList.includes(allItems[i])) {
 
                     currentCharacter.foundClassItems.push(allItems[i]);
 
@@ -407,12 +409,25 @@ function showPercentCompletion(foundItems, itemList) {
     showElementBlock("characterInfo");
     showElementInline("percentCompletion");
 
+    deleteChildren("percentCompletion");
+
     let totalFound = foundItems.length;
     let totalItems = itemList.length;
     let totalPercentage = ((totalFound / totalItems) * 100).toFixed(2);
 
     let itemPercentage = document.createElement("p");
-    document.getElementById("percentCompletion").innerHTML = "".concat(totalFound, " / ", totalItems, "(", totalPercentage, "%)");
+    itemPercentage.innerText = "Items obtained: ".concat(totalFound, " / ", totalItems, " (", totalPercentage, "%)");
+
+    let characterImage = document.createElement("img");
+
+    characterImage.setAttribute("src", "assets/" + currentCharacter.characterClass + ".png");
+    characterImage.setAttribute("alt", currentCharacter.characterClass);
+    characterImage.setAttribute("title", currentCharacter.characterClass);
+    characterImage.setAttribute("width", "40");
+    characterImage.setAttribute("height", "40");
+
+    document.getElementById("percentCompletion").appendChild(characterImage);
+    document.getElementById("percentCompletion").appendChild(itemPercentage);
 
 }
 
@@ -492,8 +507,6 @@ function displayCharacterInformation(character) {
 
     deleteChildren("percentCompletion");
 
-    document.getElementById("characterName").innerText = character.id;
-
     loadPercentage(character);
 
 }
@@ -506,6 +519,9 @@ function selectCharacter(character)
     currentCharacter = character;
     loadCharacterItems(character);
     displayCharacterInformation(character);
+
+    hideElement("characterSelectionBox");
+    showElementBlock("returnToCharacters");
 
 }
 function deleteCharacter(character)
@@ -617,7 +633,7 @@ function showOptions(character)
 
         let warning = document.createElement("p");
         warning.setAttribute("id", "characterDeletionWarning");
-        warning.innerHTML = "Are you SURE you want to delete your character?";
+        warning.innerHTML = "Are you SURE you want to delete this character?";
         document.getElementById("characterOptions").appendChild(warning);
         document.getElementById("characterOptions").appendChild(yesButton);
         document.getElementById("characterOptions").appendChild(noButton);
@@ -724,5 +740,6 @@ function startUp()
     updateCharacterSelection(characterArray);
     loadAllItems();
     hideElement("items");
+    hideElement("returnToCharacters");
 }
 
