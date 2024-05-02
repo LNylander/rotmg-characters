@@ -3,18 +3,26 @@
 <head>
   <title>ppe tracker</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 
 <body onload="startUp()">
-  <div>
-      <h1 id="title">Characters</h1>
+  
+  <div id="characterSelectionBox">
+    <div>
+      <h1>ROTMG Log Tool</h1>
+      <h2>Select a Character:</h2>
+    </div>
+
+     <div id="characters"></div>
   </div>
 
-  <div id="characters">
+  <div id="returnToCharacters">
+    <button type="button" id="returnButton" onclick="hideElement('returnToCharacters'); showElementBlock('characterSelectionBox'); hideElement('items'); hideElement('characterInfo');">Return to Character Select</button>
   </div>
 
   <div id="characterInfo">
-    <p id="characterName"></p>
     <p id="percentCompletion"></p>
   </div>
 
@@ -23,16 +31,16 @@
           <input type="checkbox" id="showClassOnly" name="showClassOnly" onclick="toggleCheckbox(currentCharacter)"/>
           <label for="showClassOnly">Show Class-specific Items Only</label>
       </div>
-      <div id="weapons">
+      <div id="weapons" class="itemBlock">
         <h1>Weapons</h1>
       </div>
-      <div id="armor">
+      <div id="armor" class="itemBlock">
         <h1>Armor</h1>
       </div>
-      <div id="abilities">
+      <div id="abilities" class="itemBlock">
         <h1>Abilities</h1>
       </div>
-      <div id="accessories">
+      <div id="accessories" class="itemBlock">
         <h1>Accessories</h1>
       </div>
   </div>
