@@ -296,7 +296,7 @@ function loadAllItems()
     for (let i = 0; i < weaponList.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/items/" + weaponList[i] + ".png");
+        newItem.setAttribute("src", "assets/" + weaponList[i] + ".png");
         newItem.setAttribute("alt", weaponList[i]);
         newItem.setAttribute("title", weaponList[i]);
         newItem.setAttribute("width", "40");
@@ -311,7 +311,7 @@ function loadAllItems()
     for (let i = 0; i < armorList.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/items/" + armorList[i] + ".png");
+        newItem.setAttribute("src", "assets/" + armorList[i] + ".png");
         newItem.setAttribute("alt", armorList[i]);
         newItem.setAttribute("title", armorList[i]);
         newItem.setAttribute("width", "40");
@@ -326,7 +326,7 @@ function loadAllItems()
     for (let i = 0; i < abilityList.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/items/" + abilityList[i] + ".png");
+        newItem.setAttribute("src", "assets/" + abilityList[i] + ".png");
         newItem.setAttribute("alt", abilityList[i]);
         newItem.setAttribute("title", abilityList[i]);
         newItem.setAttribute("width", "40");
@@ -341,7 +341,7 @@ function loadAllItems()
     for (let i = 0; i < accessories.length; i++) {
 
         let newItem = document.createElement("img");
-        newItem.setAttribute("src", "assets/items/" + accessories[i] + ".png");
+        newItem.setAttribute("src", "assets/" + accessories[i] + ".png");
         newItem.setAttribute("alt", accessories[i]);
         newItem.setAttribute("title", accessories[i]);
         newItem.setAttribute("width", "40");
