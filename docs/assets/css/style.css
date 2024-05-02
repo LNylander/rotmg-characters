@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  }
+  @supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+  }
+
+body {
+  color: black;
+}
+
+.character:hover {
+    background-color: rgba(189, 189, 189, 1);
+}
+
+.characterSelect:hover {
+    background-color: rgba(189, 189, 189, 1);
+}
+
+#newCharacterButton:hover {
+    background-color: rgba(189, 189, 189, 1);
+}
+
+#deleteButton {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    background-color: red;
+}
+
+#selectButton {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    background-color: ghostwhite;
+}
+
+#characterDeletionWarning {
+    color: red;
+}
+
+#yesButton {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    background-color: red;
+}
+
+#noButton {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    background-color: rgba(189, 189, 189, 1);
+}
+
+#characterInfo {
+    margin: auto;
+    max-width: 80%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#checklistDiv {
+    margin: auto;
+    max-width: 80%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.itemBlock {
+    border-style: groove none none none;
+    border-color: rgba(211, 211, 211, 0.3);
+    margin: auto;
+    max-width: 80%;
+    background-color: ghostwhite;
+}
+
+#characterSelectionBox {
+    background-color: ghostwhite;
+    border-style: groove none none none;
+    border-color: rgba(211, 211, 211, 0.3);
+    margin: auto;
+    max-width: 80%;
+}
+
+#percentCompletion {
+    font-size: 1.5em;
+}
+
+#returnToCharacters {
+    margin: auto;
+    max-width: 80%;
+}
+
+#returnButton {
+    background-color: ghostwhite;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.unfound:hover {
+    background-color: rgba(189, 189, 189, 1);
+}
+
+.found {
+    background-color: rgba(125, 125, 125, 1);
+}
+
+#characterOptions {
+    margin: auto;
+    max-width: 80%;
+}
+
+#classSelection {
+    margin: auto;
+    max-width: 80%;
+}
